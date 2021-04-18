@@ -1,0 +1,31 @@
+server:
+  port: 8852
+spring:
+  application:
+    name: zuul_gateway
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        file-extension: yaml
+        prefix: zuul_gateway
+      discovery:
+        server-addr: localhost:8848
+zuul:
+  routes:
+    cms:
+      serviceId: cms
+      path: /cms/**
+      stripPrefix: false
+    user:
+      serviceId: user
+      path: /user/**
+      stripPrefix: false
+
+project:
+  nacos:
+    dataId: zuul-routes
+    group: ZUUL_GATEWAY
+    timeoutMs: 5000

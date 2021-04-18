@@ -1,0 +1,6 @@
+rootProject.name = 'Spring-Ribbon-Zuul-Nacos'
+
+include 'user'
+include 'cms'
+include 'zuul'
+
