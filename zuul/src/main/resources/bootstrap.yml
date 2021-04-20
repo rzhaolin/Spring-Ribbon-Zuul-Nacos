@@ -7,25 +7,17 @@ spring:
     allow-bean-definition-overriding: true
   cloud:
     nacos:
-      config:
-        server-addr: localhost:8848
-        file-extension: yaml
-        prefix: zuul_gateway
-      discovery:
+      discovery: # 注册到nacos
         server-addr: localhost:8848
 zuul:
   routes:
-    cms:
+    # cms路由
+    cms: #  微服务的serverID
       serviceId: cms
       path: /cms/**
-      stripPrefix: false
-    user:
+      stripPrefix: false # 设置为false，表示不增加前缀
+    # user路由
+    user: # 微服务的serverID
       serviceId: user
       path: /user/**
-      stripPrefix: false
-
-project:
-  nacos:
-    dataId: zuul-routes
-    group: ZUUL_GATEWAY
-    timeoutMs: 5000
+      stripPrefix: false  # 设置为false，表示不增加前缀

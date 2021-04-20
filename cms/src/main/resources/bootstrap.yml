@@ -5,10 +5,6 @@ spring:
     name: cms
   cloud:
     nacos:
-      config:
-        server-addr: localhost:8848
-        file-extension: yaml
-        prefix: cms
       discovery:
         server-addr: localhost:8848
 

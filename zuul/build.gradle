@@ -20,12 +20,12 @@ ext {
 }
 
 dependencies {
+	// nacos
 	implementation "com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery:${alibabaCloudVersion}"
-	implementation "com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-config:${alibabaCloudVersion}"
 
+	// zuul
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-zuul'
 
-	implementation 'com.alibaba:fastjson:1.2.47'
 
 	implementation 'org.springframework.boot:spring-boot-starter'
 	compile "org.springframework.boot:spring-boot-starter-web:${spring_boot_version}"
